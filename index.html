@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Library</h1>
+    </header>
+    <div class="subheader">
+        <form class="newBookForm">
+            <label for="book-title">Title:</label>
+            <input type="text" id="book-title" name="book-title" required>
+
+            <label for="book-author">Author:</label>
+            <input type="text" id="book-author" name="book-author" required>
+
+            <label for="book-pages">Number of Pages:</label>
+            <input type="number" id="book-pages" name="book-pages" required>
+
+            <label for="book-read">Read:</label>
+            <input type="radio" id="book-read" name="book-read" value="yes" required>
+            <label for="book-read">Yes</label>
+            <input type="radio" id="book-read" name="book-read" value="no" required>
+            <label for="book-read">No</label>
+
+            <button type="submit" class="newBook">Add Book</button>
+        </form>
+    </div>
+    <div class="card-container">
+        <div class="book-card1">
+        </div>
+        <div class="book-card">
+            <!-- Card 2 content -->
+        </div>
+        <div class="book-card">
+            <!-- Card 3 content -->
+        </div>
+        <div class="book-card">
+            <!-- Card 4 content -->
+        </div>
+    </div>
+</body>
+</html>
