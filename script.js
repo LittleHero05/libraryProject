@@ -1,4 +1,49 @@
+// Wait for the DOM to fully load
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the modal, modal button, close button, and overlay elements
+    const openModalButton = document.querySelector('[data-modal-target]');
+    const closeModalButton = document.querySelector('[data-close-button]');
+    const overlay = document.getElementById('overlay');
+    const modal = document.querySelector('.bookPopForm');
 
+    // Function to open the modal
+    function openModal(modal) {
+        if (modal == null) return;
+        modal.classList.add('active');
+        overlay.classList.add('active');
+    }
+
+    // Function to close the modal
+    function closeModal(modal) {
+        if (modal == null) return;
+        modal.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+
+    // Event listener for the open modal button
+    openModalButton.addEventListener('click', () => {
+        openModal(modal);
+    });
+
+    // Event listener for the close modal button
+    closeModalButton.addEventListener('click', () => {
+        closeModal(modal);
+    });
+
+    // Event listener for the overlay to close the modal
+    overlay.addEventListener('click', () => {
+        closeModal(modal);
+    });
+
+    // Optional: Add event listener for the form submission
+    const form = document.querySelector('.newBookForm');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Handle form submission, e.g., validate input, update UI, etc.
+        console.log('Form submitted');
+        closeModal(modal);
+    });
+});
 
 // Define the Book constructor function
 function Book(author, title, pages, read) {
@@ -78,3 +123,4 @@ function createBookCard(book) {
 
     cardContainer.appendChild(bookCard);
 }
+

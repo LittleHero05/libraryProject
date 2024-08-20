@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="reset.css"
+    <link rel="stylesheet" href="reset.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,24 +13,28 @@
         <h1>Library</h1>
     </header>
     <div class="subheader">
-        <form class="newBookForm">
-            <label for="book-title">Title:</label>
-            <input type="text" id="book-title" name="book-title" required>
+        <button data-modal-target="#bookPopForm">New Book</button>
+        <div class="bookPopForm" id="bookPopForm">
+            <form class="newBookForm">
+                <label for="book-title">Title:</label>
+                <input type="text" id="book-title" name="book-title" required>
 
-            <label for="book-author">Author:</label>
-            <input type="text" id="book-author" name="book-author" required>
+                <label for="book-author">Author:</label>
+                <input type="text" id="book-author" name="book-author" required>
 
-            <label for="book-pages">Number of Pages:</label>
-            <input type="number" id="book-pages" name="book-pages" required>
+                <label for="book-pages">Number of Pages:</label>
+                <input type="number" id="book-pages" name="book-pages" required>
 
-            <label for="book-read">Read:</label>
-            <input type="radio" id="book-read" name="book-read" value="yes" required>
-            <label for="book-read">Yes</label>
-            <input type="radio" id="book-read" name="book-read" value="no" required>
-            <label for="book-read">No</label>
-
-            <button type="submit" class="newBook">Add Book</button>
-        </form>
+                <label for="book-read">Read:</label>
+                <input type="radio" id="book-read-yes" name="book-read" value="yes" required>
+                <label for="book-read-yes">Yes</label>
+                <input type="radio" id="book-read-no" name="book-read" value="no" required>
+                <label for="book-read-no">No</label>
+                <button data-close-button class="close-button">&times;</button>
+                <button type="submit" class="newBook">Add Book</button>
+            </form>
+        </div>
+        <div id="overlay" class="active"></div>
     </div>
     <div id="card-container">
     </div>
